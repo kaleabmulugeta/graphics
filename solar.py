@@ -16,9 +16,9 @@ def draw_sphere(radius, slices, stacks):
 
         glBegin(GL_QUADS)
 
-        for j in range(slices):
-            lon0 = 2 * math.pi * j / slices
-            lon1 = 2 * math.pi * (j + 1) / slices
+        for k in range(slices):
+            lon0 = 2 * math.pi * k / slices
+            lon1 = 2 * math.pi * (k + 1) / slices
 
             x00 = cos0 * math.cos(lon0)
             z00 = cos0 * math.sin(lon0)
