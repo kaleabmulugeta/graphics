@@ -69,9 +69,7 @@ angle = 0
 time_speed = 1.0
 time_direction = 1
 
-scales = {
-    body: 1.0 for body in BODY_NAMES
-}
+scales = {body: 1.0 for body in BODY_NAMES}
 
 keys = {}
 
@@ -286,13 +284,15 @@ while True:
     ]
     speeds = [7, 6, 5, 4]
 
-    for i in range(4):
+    for m in range(4):
         glPushMatrix()
-        ox, oy, oz = orbit(moons[i][0], angle * speeds[i])
+        ox, oy, oz = orbit(moons[m][0], angle * speeds[m])
         glTranslatef(ox, oy, oz)
-        glColor3f(moons[i][1], moons[i][2], moons[i][3])
+        glColor3f(moons[m][1], moons[m][2], moons[m][3])
         glRotatef(spins["jupiter"] % 360, 0, 1, 0)
-        glScalef(scales["jupiter"] * 0.2, scales["jupiter"] * 0.2, scales["jupiter"] * 0.2)
+        glScalef(
+            scales["jupiter"] * 0.2, scales["jupiter"] * 0.2, scales["jupiter"] * 0.2
+        )
         draw_sphere(2, 10, 10)
         glPopMatrix()
 
